@@ -1,0 +1,47 @@
+.sidebar {
+  height: 100%;
+  width: 100%;
+}
+
+.logo {
+  width: 100%;
+  padding: 20px;
+}
+
+img {
+  width: 100%;
+}
+
+.links {
+  height: 100%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+li {
+  list-style: none;
+  display: block;
+  width: 100%;
+}
+
+a {
+  color: brown;
+  display: block;
+  padding: 10px 15px;
+  width: 100%;
+}
+
+a:hover {
+  background-color: brown;
+  color: #cac;
+}
+
+i {
+  float: left;
+  margin-top: 0;
+  margin-right: 8px;
+}

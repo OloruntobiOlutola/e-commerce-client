@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@env/*": ["enviroment/*"],
+      "@shop/products": ["libs/products/src/index.ts"],
+      "@shop/ui": ["libs/ui/src/index.ts"],
+      "@shop/users": ["libs/users/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

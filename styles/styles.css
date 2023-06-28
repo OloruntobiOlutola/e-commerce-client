@@ -1,0 +1,21 @@
+@import 'normalize.css/normalize.css';
+@import '~bootstrap/dist/css/bootstrap.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,700;1,100;1,700&display=swap');
+@import 'primeng/resources/themes/bootstrap4-light-blue/theme.css';
+@import 'primeng/resources/primeng.css';
+@import 'primeicons/primeicons.css';
+@import 'primeflex/primeflex.css';
+
+:root {
+  --bg-color: #cab;
+}
+
+body,
+.p-component {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+}
