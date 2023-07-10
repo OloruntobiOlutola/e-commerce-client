@@ -48,7 +48,7 @@ export class ProductsFormComponent implements OnInit {
       countInStock: ['', Validators.required],
       description: ['', Validators.required],
       richDescription: [''],
-      image: [''],
+      image: ['', Validators.required],
       images: [''],
       isFeatured: [false],
     });
@@ -123,10 +123,11 @@ export class ProductsFormComponent implements OnInit {
     console.log(productData);
     this.productService.updateProduct(this.id, productData).subscribe({
       error: (error) => {
+        console.log(error);
         this.messageService.add({
           severity: 'error',
           summary: 'Error',
-          detail: 'Category not updated',
+          detail: 'Product not updated',
           life: 500,
         });
       },
@@ -153,6 +154,7 @@ export class ProductsFormComponent implements OnInit {
         this.productService
           .getProduct(param['id'])
           .subscribe((product: any) => {
+            console.log(product)
             this.form.controls['name'].setValue(product.name);
             this.form.controls['brand'].setValue(product.brand);
             this.form.controls['image'].setValue(product.image);

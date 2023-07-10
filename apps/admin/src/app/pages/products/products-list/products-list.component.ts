@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product, ProductsService } from '@shop/products';
+import { ConfirmationService, MessageService } from 'primeng/api';
 
 @Component({
   selector: 'shop-products-list',
@@ -12,7 +13,9 @@ export class ProductsListComponent implements OnInit {
 
   constructor(
     private productsService: ProductsService,
-    private router: Router
+    private confirmationService: ConfirmationService,
+    private router: Router,
+    private messageService: MessageService,
   ) {}
 
   ngOnInit(): void {
@@ -24,8 +27,21 @@ export class ProductsListComponent implements OnInit {
       this.products = res;
     });
   }
-  deleteProduct(arg0: any) {
-    throw new Error('Method not implemented.');
+  deleteProduct(id: string) {
+    this.confirmationService.confirm({
+      message: 'Are you sure that you want to proceed?',
+      header: 'Delete Product',
+      icon: 'pi pi-exclamation-triangle',
+      accept: () =>
+        this.productsService.deleteProduct(id).subscribe(() => {
+          this.messageService.add({
+            severity: 'info',
+            summary: 'Delete',
+            detail: 'Product successfully deleted',
+          });
+          this.getProducts();
+        }),
+    });
   }
   updateProduct(id: string) {
     this.router.navigateByUrl(`products/form/${id}`);

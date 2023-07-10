@@ -8,6 +8,7 @@ import { LogoutComponent } from './pages/logout/logout.component';
 import { CategoryFormComponent } from './pages/category/category-form/category-form.component';
 import { ProductsListComponent } from './pages/products/products-list/products-list.component';
 import { ProductsFormComponent } from './pages/products/products-form/products-form.component';
+import { UserListComponent } from './pages/users/user-list/user-list.component';
 
 export const appRoutes: Route[] = [
   {
@@ -48,6 +49,14 @@ export const appRoutes: Route[] = [
       },
       {
         path: 'users',
+        component: UserListComponent,
+      },
+      {
+        path: 'users/form',
+        component: UsersComponent,
+      },
+      {
+        path: 'users/form/:id',
         component: UsersComponent,
       },
       {

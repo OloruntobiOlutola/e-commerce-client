@@ -31,8 +31,10 @@ import { InputSwitchModule } from 'primeng/inputswitch';
 import { ColorPickerModule } from 'primeng/colorpicker';
 import { DropdownModule } from 'primeng/dropdown';
 import { EditorModule } from 'primeng/editor';
+import { InputMaskModule } from 'primeng/inputmask';
 import { ProductsListComponent } from './pages/products/products-list/products-list.component';
 import { ProductsFormComponent } from './pages/products/products-form/products-form.component';
+import { UserListComponent } from './pages/users/user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,7 @@ import { ProductsFormComponent } from './pages/products/products-form/products-f
     ProductsListComponent,
     ProductsFormComponent,
     ProductsFormComponent,
+    UserListComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,6 +75,7 @@ import { ProductsFormComponent } from './pages/products/products-form/products-f
     InputSwitchModule,
     DropdownModule,
     EditorModule,
+    InputMaskModule
   ],
   providers: [
     CategoriesService,

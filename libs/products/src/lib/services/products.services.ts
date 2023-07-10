@@ -28,8 +28,7 @@ export class ProductsService {
   }
 
   updateProduct(id: string, update: FormData) {
-    return this.httpClient.put<Product>(`${this.apiUri}/${id}`, {
-      ...update,
-    });
+    return this.httpClient.put<Product>(`${this.apiUri}/${id}`,update
+    );
   }
 }
